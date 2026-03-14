@@ -1,3 +1,4 @@
 baseURL = 'https://jqno.nl/'
 languageCode = 'en-uk'
 title = 'tr ouwens'
+theme = 'basic'

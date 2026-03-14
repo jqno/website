@@ -12,3 +12,6 @@ hugo.linux
 
 # Temporary lock file while building
 /.hugo_build.lock
+
+# Example pages from theme
+themes/basic/content
