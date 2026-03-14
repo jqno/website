@@ -1,0 +1,9 @@
+services:
+  hugo:
+    image: hugomods/hugo:debian-base-0.157.0
+    volumes:
+      - .:/src
+    working_dir: /src
+    ports:
+      - "1313:1313"
+    user: "${UID:-1000}:${GID:-1000}"
