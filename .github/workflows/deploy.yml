@@ -25,7 +25,7 @@ jobs:
 
       - name: Build Hugo Site
         run: |
-          docker compose run --rm --user 0:0 hugo hugo --cleanDestinationDir --minify
+          docker compose run --rm --user 0:0 hugo hugo --environment=prod --cleanDestinationDir --minify
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
