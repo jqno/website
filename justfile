@@ -3,7 +3,7 @@
 
 # Build the site
 build:
-    docker compose run --rm hugo hugo --cleanDestinationDir --minify
+    docker compose run --rm hugo hugo --environment=prod --cleanDestinationDir --minify
 
 # Serve the site locally
 serve:

@@ -1,4 +1,4 @@
-baseURL = 'https://jqno.nl/'
+baseURL = '/'
 languageCode = 'en-uk'
 title = 'tr ouwens'
 theme = 'basic'
