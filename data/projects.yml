@@ -1,0 +1,116 @@
+sections:
+  - title: Active
+    id: active
+    entries:
+      - name: EqualsVerifier
+        id: equalsverifier
+        description: "A tool to make rigourously testing Java's equals and hashCode methods a one-liner"
+        icon: java
+        links:
+          - label: site
+            url: http://jqno.nl/equalsverifier
+          - label: github
+            url: https://github.com/jqno/equalsverifier
+
+      - name: balGPT
+        id: balgpt
+        description: A webapp I use to predict the outcome of soccer matches, so that I can participate in the family pool without needing to learn about the actual sport. Successor of [Foobal](#foobal); written completely with the help of ChatGPT.
+        icon: go
+        links:
+          - label: site
+            url: https://jqno.nl/tags/#balgpt
+          - label: github
+            url: https://github.com/jqno/balGPT
+
+      - name: One Window Wonderland
+        id: one-window-wonderland
+        description: "A GNOME Shell extension that automatically maximizes new windows, leaving 'useless gaps' around them"
+        icon: javascript
+        links:
+          - label: site
+            url: https://extensions.gnome.org/extension/5696/one-window-wonderland/
+          - label: github
+            url: https://github.com/jqno/gnome-one-window-wonderland/
+
+      - name: Happy Appy Hotkey
+        id: happy-appy-hotkey
+        description: A GNOME Shell extension to assign hotkeys to applications to give them focus or launch them
+        icon: javascript
+        links:
+          - label: site
+            url: https://extensions.gnome.org/extension/6057/happy-appy-hotkey/
+          - label: github
+            url: https://github.com/jqno/gnome-happy-appy-hotkey/
+
+      - name: Tranquility.nvim
+        id: tranquility-nvim
+        description: A configurable, tranquil colorscheme for Neovim that highlights identifiers and de-emphasizes keywords, so you can easily see what's important in your code. Successor of [vim-reversal](#vim-reversal)
+        icon: neovim
+        links:
+          - label: github
+            url: https://github.com/jqno/tranquility.nvim/
+
+      - name: AnnotationScript
+        id: annotationscript
+        description: A LISP-based programming language written entirely in Java annotations
+        icon: java
+        links:
+          - label: github
+            url: https://github.com/jqno/AnnotationScript
+
+  - title: Abandoned
+    id: abandoned
+    entries:
+      - name: Parallel Java
+        id: parallel-java
+        description: A [Todo Backend](https://www.todobackend.com/) written in Java, without using annotations, to support my talk [Java from a Parallel Universe](https://jqno.nl/talks/paralleljava/)
+        icon: java
+        links:
+          - label: github
+            url: https://github.com/jqno/paralleljava/
+
+      - name: PicoTest
+        id: picotest
+        description: An ultra-minimal unit-testing framework, based on the JUnit 5 Platform
+        icon: java
+        links:
+          - label: github
+            url: https://github.com/jqno/picotest
+
+      - name: ComposeKey
+        id: composekey
+        description: A bundle of text-expansion snippets for [Alfred](https://www.alfredapp.com/) that mimic the behaviour of Linux's compose key
+        icon: scala
+        links:
+          - label: site
+            url: https://jqno.nl/ComposeKey.alfredsnippets/
+          - label: github
+            url: https://github.com/jqno/ComposeKey.alfredsnippets
+
+      - name: Foobal
+        id: foobal
+        description: A program I use to predict the outcome of soccer matches, so that I can participate in the family pool without needing to learn about the actual sport
+        icon: scala
+        links:
+          - label: site
+            url: https://jqno.nl/tags/#foobal
+          - label: github
+            url: https://github.com/jqno/foobal
+
+      - name: ReminderMail
+        id: remindermail
+        description: A small Android app that makes it easy to quickly send mails to yourself
+        icon: kotlin
+        links:
+          - label: site
+            url: https://jqno.nl/remindermail
+          - label: github
+            url: https://github.com/jqno/remindermail
+
+      - name: vim-reversal
+        id: vim-reversal
+        description: A colorscheme for Vim that highlights identifiers and de-emphasizes keywords, so you can easily see what's important in your code
+        icon: vim
+        links:
+          - label: github
+            url: https://github.com/jqno/vim-reversal

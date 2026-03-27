@@ -1,0 +1,143 @@
+sections:
+  - title: Standalone
+    id: main
+    entries:
+      - name: tr ouwens
+        id: tr-ouwens
+        date: 2011 - present
+        description: My technology blog
+        language: 🇬🇧
+        links:
+          - label: site
+            url: http://jqno.nl/blog
+
+      - name: Brief en leed
+        id: brief-en-leed
+        date: 2009 - 2012
+        description: a funny letter-writing blog I did with my friend Ralf
+        language: 🇳🇱
+        links:
+          - label: site
+            url: http://jqno.nl/briefenleed
+
+      - name: Voorstel voor een methode voor de kwantitatieve analyse en vergelijking van beeldverhalen
+        id: voorstel
+        date: January 2008
+        description: a way too in-depth survey of Asterix jokes
+        language: 🇳🇱
+        links:
+          - label: PDF
+            url: https://jqno.nl/website-files/paper.pdf
+
+      - name: The Performance of Wireless MPEG-2 Video Streaming
+        id: thesis
+        date: August 2005
+        description: my Master's Thesis
+        language: 🇬🇧
+        links:
+          - label: PDF
+            url: https://jqno.nl/website-files/thesis.pdf
+
+  - title: Dutch Java Magazine
+    id: dutch-java-magazine
+    language: 🇳🇱/🇬🇧
+    links:
+      - label: site
+        url: https://nljug.org/category/java-magazine/
+    entries:
+      - name: Old man yells at cloud DB schema
+        id: old-man-yells-at-cloud-db-schema
+        date: February 2026
+        language: 🇬🇧
+        links:
+          - label: PDF
+            url: https://jqno.nl/website-files/java-magazine-2026-1.pdf
+
+      - name: The impact of AI
+        id: the-impact-of-ai
+        date: September 2023
+        language: 🇬🇧
+        links:
+          - label: PDF
+            url: https://jqno.nl/website-files/java-magazine-2023-3.pdf
+
+      - name: De algoritmes van het Java Collections Framework
+        id: de-algoritmes-van-het-java-collections-framework
+        date: September 2021
+        language: 🇳🇱
+        links:
+          - label: PDF
+            url: https://jqno.nl/website-files/java-magazine-2021-3.pdf
+          - label: site
+            url: https://nljug.org/java-magazine/java-magazine-3-2021-java-17-is-here/
+
+      - name: Actief worden in open source
+        id: actief-worden-in-open-source
+        date: September 2020
+        language: 🇳🇱
+        co_authors:
+          - name: Danny van Bruggen
+            url: https://twitter.com/matozoid
+        links:
+          - label: PDF
+            url: https://jqno.nl/website-files/java-magazine-2020-3.pdf
+          - label: site
+            url: https://nljug.org/java-magazine/2020-editie-3/actief-worden-in-open-source/
+
+      - name: "Lees dit niet! ☠️💣💥"
+        id: lees-dit-niet
+        date: October 2018
+        language: 🇳🇱
+        links:
+          - label: PDF
+            url: https://jqno.nl/website-files/java-magazine-2018-4.pdf
+          - label: site
+            url: https://nljug.org/java-magazine/2018-editie-4/java-magazine-4-2018/
+
+      - name: Selenium is leuk met ScalaTest
+        id: selenium-is-leuk-met-scalatest
+        date: February 2018
+        language: 🇳🇱
+        links:
+          - label: PDF
+            url: https://jqno.nl/website-files/java-magazine-2018-1.pdf
+          - label: site
+            url: https://nljug.org/java-magazine/selenium-is-leuk-met-scalatest/
+
+      - name: Een DSL kweken
+        id: een-dsl-kweken
+        date: April 2016
+        language: 🇳🇱
+        links:
+          - label: PDF
+            url: https://jqno.nl/website-files/java-magazine-2016-2.pdf
+          - label: site
+            url: https://nljug.org/java-magazine/een-dsl-kweken/
+
+      - name: Grip op je buildproces met Gradle
+        id: grip-op-je-buildproces-met-gradle
+        date: June 2015
+        language: 🇳🇱
+        co_authors:
+          - name: Hanno Embregts
+            url: https://twitter.com/hannotify
+        links:
+          - label: PDF
+            url: https://jqno.nl/website-files/java-magazine-2015-3.pdf
+          - label: site
+            url: https://nljug.org/java-magazine/grip-op-je-buildproces-met-gradle/
+
+  - title: Yoink blog
+    id: yoink-blog
+    language: 🇬🇧
+    links:
+      - label: site
+        url: https://blog.yoink.nl/
+    entries:
+      - name: Stop chasing nines
+        id: stop-chasing-nines
+        date: September 2023
+        language: 🇬🇧
+        links:
+          - label: site
+            url: https://yoink.nl/posts/2023/09/18/stop-chasing-nines.html
