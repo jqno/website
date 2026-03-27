@@ -1,0 +1,2 @@
+{{ $img := (resources.Get (printf "images/icons/%s.png" .)).Resize "32x32" }}
+<img src="{{ $img.RelPermalink }}" alt="{{ . }}" class="icon">
