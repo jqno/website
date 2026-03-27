@@ -1,0 +1,26 @@
+{{ define "main" }}
+  <h1>{{ .Title }}</h1>
+
+  {{ $data := index .Site.Data .Params.data }}
+  {{ range $data.sections }}
+    <h2 id="{{ .id }}">{{ .title }}</h2>
+    <span>{{ .language }}</span>
+    {{ range .links }}[<a href="{{ .url }}">{{ .label }}</a>] {{ end }}
+    <ul>
+      {{ range .entries }}
+        <li id="{{ .id }}">
+          <strong>{{ .name }}</strong>
+          {{ if .co_authors }}
+            (met {{ range $i, $ca := .co_authors }}{{ if $i }}, {{ end }}{{ if $ca.url }}<a href="{{ $ca.url }}">{{ $ca.name }}</a>{{ else }}{{ $ca.name }}{{ end }}{{ end }})
+          {{ end }}
+          {{ if .date }} — <em>{{ .date }}</em>{{ end }}
+          <br>
+          {{ if .icon }}{{ partial "icon.html" .icon }}{{ end }}
+          {{ if .language }}<span>{{ .language }}</span> {{ end }}
+          {{ range .links }}[<a href="{{ .url }}">{{ .label }}</a>] {{ end }}
+          {{ if .description }}<br>{{ .description | markdownify }}{{ end }}
+        </li>
+      {{ end }}
+    </ul>
+  {{ end }}
+{{ end }}
