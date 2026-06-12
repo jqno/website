@@ -1,0 +1,22 @@
+---
+slug: voyager
+title: "Star Trek: Voyager cast Lego MOC"
+tags: [lego, star-trek]
+---
+
+A minimalistic rendition of the cast of Star Trek: Voyager
+
+Neelix, Tuvok, The Doctor, Seven, Janeway, Chakotay, B'Elanna, Paris, Kim
+
+![render](render.webp)
+
+![photo](photo.webp)
+
+Check the [Rebrickable page](https://rebrickable.com/mocs/MOC-159366) or [download the zip file](https://jqno.nl/website-files/lego-voy-cast.zip) with:
+
+- Building instructions with parts list
+- BrickLink parts list
+- Parts ordering instructions
+- Pretty picture
+
+If you decide to order the bricks for this set from BrickLink, note that it should not cost more than ± €10 excluding shipping.

@@ -1,3 +1,10 @@
+params:
+  social:
+    bluesky: https://bsky.app/profile/jqno.nl
+    mastodon: https://mastodon.online/@jqno
+    github: jqno
+    stackoverflow: 127863
+
 menus:
   main:
     - name: Home
@@ -6,6 +13,21 @@ menus:
     - name: Posts
       pageRef: /posts
       weight: 20
+    - name: Concerts
+      pageRef: /concerts
+      weight: 30
+    - name: Brief en Leed
+      pageRef: /briefenleed
+      weight: 40
+    - name: Talks
+      pageRef: /talks
+      weight: 50
+    - name: Projects
+      pageRef: /projects
+      weight: 60
+    - name: Writings
+      pageRef: /writings
+      weight: 70
     - name: Tags
       pageRef: /tags
-      weight: 30
+      weight: 80

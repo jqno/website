@@ -2,3 +2,48 @@ baseURL: /
 languageCode: en-uk
 title: tr ouwens
 theme: basic
+
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
+
+taxonomies:
+  tag: tags
+  artist: artists
+  venue: venues
+  talk: talks
+  conference: conferences
+  categorie: categorieen
+  auteur: auteurs
+
+permalinks:
+  page:
+    posts: /posts/:slug/
+    concerts: /concerts/:slug/
+    briefenleed: /briefenleed/:slug/
+    deliveries: /deliveries/:slug/
+    lego: /lego/:slug/
+  taxonomy:
+    tags: /tags/
+    artists: /concerts/artists/
+    venues: /concerts/venues/
+    talks: /talks/
+    conferences: /conferences/
+    categorieen: /briefenleed/categorieen/
+    auteurs: /briefenleed/auteurs/
+  term:
+    tags: /tags/:slug/
+    artists: /concerts/artists/:slug/
+    venues: /concerts/venues/:slug/
+    talks: /talks/:slug/
+    conferences: /conferences/:slug/
+    categorieen: /briefenleed/categorieen/:slug/
+    auteurs: /briefenleed/auteurs/:slug/
+
+outputs:
+  home: [html, rss]
+  section: [html, rss]
+
+pagination:
+  pagerSize: 20

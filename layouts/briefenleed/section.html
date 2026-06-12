@@ -1,0 +1,14 @@
+{{ define "main" }}
+  <h1>{{ .Title }}</h1>
+  {{ .Content }}
+  <ul>
+    {{ range .Paginator.Pages }}
+      <li>
+        <time datetime="{{ .Date | time.Format "2006-01-02" }}">{{ .Date | time.Format "2-1-2006" }}</time>
+        — <a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>
+      </li>
+    {{ end }}
+  </ul>
+  {{ partial "pagination.html" . }}
+  {{ partial "author.html" (dict "bio" .Params.author_bio "extraLinks" .Params.author_links) }}
+{{ end }}

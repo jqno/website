@@ -1,0 +1,21 @@
+{{ define "main" }}
+  <h1>{{ .Title }}</h1>
+  <h2>Artists</h2>
+  <p>
+    {{ range $term, $data := site.Taxonomies.artists }}
+      {{ $factor := $data.Count }}{{ if gt $factor 10 }}{{ $factor = 10 }}{{ end }}
+      <span style="font-size: {{ add (mul $factor 10) 60 }}%">
+        <a href="{{ $data.Page.RelPermalink }}">{{ $data.Page.LinkTitle }}</a> ({{ $data.Count }})
+      </span>
+    {{ end }}
+  </p>
+  <h2>Venues</h2>
+  <p>
+    {{ range $term, $data := site.Taxonomies.venues }}
+      {{ $factor := $data.Count }}{{ if gt $factor 10 }}{{ $factor = 10 }}{{ end }}
+      <span style="font-size: {{ add (mul $factor 10) 60 }}%">
+        <a href="{{ $data.Page.RelPermalink }}">{{ $data.Page.LinkTitle }}</a> ({{ $data.Count }})
+      </span>
+    {{ end }}
+  </p>
+{{ end }}

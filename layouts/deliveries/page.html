@@ -1,0 +1,11 @@
+{{ define "main" }}
+  <h1>{{ .Title }}</h1>
+  <time datetime="{{ .Date | time.Format "2006-01-02" }}">{{ .Date | time.Format ":date_long" }}</time>
+  {{ partial "terms.html" (dict "taxonomy" "talks" "page" .) }}
+  {{ partial "terms.html" (dict "taxonomy" "conferences" "page" .) }}
+  {{ partial "terms.html" (dict "taxonomy" "tags" "page" .) }}
+  <ul>
+    {{ range .Params.links }}<li><a href="{{ .url }}">{{ .label }}</a></li>{{ end }}
+  </ul>
+  {{ .Content }}
+{{ end }}

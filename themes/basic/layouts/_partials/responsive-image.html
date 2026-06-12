@@ -1,0 +1,28 @@
+{{- /*
+Responsive <picture> with webp desktop/mobile variants.
+
+Width constants below are placeholders until real CSS exists — retune then.
+
+@context {resource} image The desktop (or only) image.
+@context {string} alt Alt text.
+@context {resource} mobileImage Optional art-directed mobile image.
+
+@example: {{ partial "responsive-image.html" (dict "image" $img "alt" "..." ) }}
+*/}}
+
+{{- $desktopWidth := 800 }}
+{{- $mobileWidth := 400 }}
+{{- $breakpoint := 600 }}
+
+{{- $img := .image }}
+{{- $alt := .alt }}
+{{- $mobile := or .mobileImage $img }}
+
+{{- $dw := math.Min $img.Width $desktopWidth }}
+{{- $mw := math.Min $mobile.Width $mobileWidth }}
+{{- $desktopVariant := $img.Process (printf "resize %.0fx webp" $dw) }}
+{{- $mobileVariant := $mobile.Process (printf "resize %.0fx webp" $mw) }}
+<picture>
+  <source media="(max-width: {{ $breakpoint }}px)" srcset="{{ $mobileVariant.RelPermalink }}">
+  <img src="{{ $desktopVariant.RelPermalink }}" alt="{{ $alt }}" width="{{ $desktopVariant.Width }}" height="{{ $desktopVariant.Height }}">
+</picture>

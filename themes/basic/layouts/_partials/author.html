@@ -1,0 +1,21 @@
+{{- /*
+Author bio + social links block.
+
+@context {string} bio Markdown bio text.
+@context {slice} extraLinks Optional list of {label, url} dicts.
+
+@example: {{ partial "author.html" (dict "bio" .Params.author_bio "extraLinks" .Params.author_links) }}
+*/}}
+
+{{- $bio := .bio }}
+{{- $extra := .extraLinks }}
+<div class="author">
+  <p>{{ $bio | markdownify }}</p>
+  <ul>
+    {{- with site.Params.social.bluesky }}<li><a href="{{ . }}" rel="me">Bluesky</a></li>{{- end }}
+    {{- with site.Params.social.mastodon }}<li><a href="{{ . }}" rel="me">Mastodon</a></li>{{- end }}
+    {{- with site.Params.social.github }}<li><a href="https://github.com/{{ . }}">GitHub</a></li>{{- end }}
+    {{- with site.Params.social.stackoverflow }}<li><a href="https://stackoverflow.com/users/{{ . }}">Stack Overflow</a></li>{{- end }}
+    {{- range $extra }}<li><a href="{{ .url }}">{{ .label }}</a></li>{{- end }}
+  </ul>
+</div>

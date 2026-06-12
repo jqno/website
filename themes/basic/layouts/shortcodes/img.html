@@ -1,0 +1,10 @@
+{{- /* {{< img "photo.jpg" "Alt text" >}} or {{< img "photo.jpg" "Alt text" "photo-mobile.jpg" >}} */}}
+{{- $img := .Page.Resources.GetMatch (.Get 0) }}
+{{- if not $img }}
+  {{- errorf "img shortcode: resource %q not found in %s" (.Get 0) .Page.Path }}
+{{- end }}
+{{- $mobile := "" }}
+{{- with .Get 2 }}
+  {{- $mobile = $.Page.Resources.GetMatch . }}
+{{- end }}
+{{- partial "responsive-image.html" (dict "image" $img "alt" (.Get 1) "mobileImage" $mobile) }}

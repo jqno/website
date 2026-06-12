@@ -1,0 +1,14 @@
+{{ define "main" }}
+  <h1>{{ .Title }}</h1>
+  {{ with .Resources.GetMatch "titleslide.*" }}
+    {{ with .Resize "800x" }}<img src="{{ .RelPermalink }}" alt="{{ $.Title }}" width="{{ .Width }}" height="{{ .Height }}">{{ end }}
+  {{ end }}
+  {{ partial "terms.html" (dict "taxonomy" "tags" "page" .) }}
+  {{ .Content }}
+  <h2>Deliveries</h2>
+  <ul>
+    {{ range .Pages }}
+      <li><a href="{{ .RelPermalink }}">{{ .Title }}</a> — {{ .Date | time.Format ":date_long" }}</li>
+    {{ end }}
+  </ul>
+{{ end }}

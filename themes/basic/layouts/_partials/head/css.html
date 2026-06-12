@@ -1,4 +1,13 @@
-{{- with resources.Get "css/main.css" }}
+{{- /* Publish the font files so the relative url()s in fonts.css resolve.
+Only woff/woff2 are web fonts; the OTF (for images.Text) and the license PDF stay unpublished. */}}
+{{- range resources.Match "fonts/**" }}
+  {{- if in (slice ".woff" ".woff2") (path.Ext .Name) }}
+    {{- $noop := .RelPermalink }}
+  {{- end }}
+{{- end }}
+{{- $fonts := resources.Get "css/fonts.css" }}
+{{- $main := resources.Get "css/main.css" }}
+{{- with slice $fonts $main | resources.Concat "css/main.css" }}
   {{- if hugo.IsDevelopment }}
     <link rel="stylesheet" href="{{ .RelPermalink }}">
   {{- else }}

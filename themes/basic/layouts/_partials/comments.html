@@ -1,0 +1,12 @@
+{{- with .Params.comments }}
+  <section class="comments">
+    <h2>Reacties</h2>
+    {{- range . }}
+      <div class="comment">
+        <strong>{{ if .author_url }}<a href="{{ .author_url }}">{{ .author }}</a>{{ else }}{{ .author }}{{ end }}</strong>
+        <time>{{ .date | time.Format "2-1-2006" }}</time>
+        <div>{{ .content | safeHTML }}</div>
+      </div>
+    {{- end }}
+  </section>
+{{- end }}

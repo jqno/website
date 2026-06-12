@@ -1,0 +1,26 @@
+{{ define "main" }}
+  <h1>{{ .Title }}</h1>
+  {{ .Content }}
+  <ul>
+    {{ range .Pages }}
+      {{ if .Content }}
+        <li>
+          {{ with .Resources.GetMatch "titleslide.*" }}
+            {{ with .Resize "300x" }}<img src="{{ .RelPermalink }}" alt="" width="{{ .Width }}" height="{{ .Height }}">{{ end }}
+          {{ end }}
+          <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+        </li>
+      {{ end }}
+    {{ end }}
+  </ul>
+  <h2>One-off talks</h2>
+  <ul>
+    {{ range .Pages }}
+      {{ if not .Content }}<li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>{{ end }}
+    {{ end }}
+  </ul>
+  <p>
+    <a href="{{ (site.GetPage "/deliveries").RelPermalink }}">All deliveries</a> ·
+    <a href="{{ (site.GetPage "/conferences").RelPermalink }}">Conferences</a>
+  </p>
+{{ end }}

@@ -1,0 +1,11 @@
+<ul>
+  {{ range . }}
+    <li>
+      <time class="concert-date" datetime="{{ .Date | time.Format "2006-01-02" }}">{{ .Date | time.Format "2006-01-02" }}</time>
+      <a class="concert-title" href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>
+      {{ with .Params.venues }}
+        <span class="concert-venue">{{ delimit . ", " }}</span>
+      {{ end }}
+    </li>
+  {{ end }}
+</ul>
