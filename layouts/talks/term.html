@@ -8,7 +8,10 @@
   <h2>Deliveries</h2>
   <ul>
     {{ range .Pages }}
-      <li><a href="{{ .RelPermalink }}">{{ .Title }}</a> — {{ .Date | time.Format ":date_long" }}</li>
+      <li>
+        <a class="delivery-title" href="{{ .RelPermalink }}">{{ .Title }}</a>
+        <time class="delivery-date" datetime="{{ .Date | time.Format "2006-01-02" }}">{{ .Date | time.Format ":date_long" }}</time>
+      </li>
     {{ end }}
   </ul>
 {{ end }}

@@ -4,8 +4,8 @@
   <ul>
     {{ range .Paginator.Pages }}
       <li>
-        <time datetime="{{ .Date | time.Format "2006-01-02" }}">{{ .Date | time.Format "2006-01-02" }}</time>
-        — <a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>
+        <time class="concert-date" datetime="{{ .Date | time.Format "2006-01-02" }}">{{ .Date | time.Format "2006-01-02" }}</time>
+        <a class="concert-title" href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>
       </li>
     {{ end }}
   </ul>

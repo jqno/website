@@ -3,7 +3,10 @@
   {{ .Content }}
   <ul>
     {{ range .Paginator.Pages }}
-      <li>{{ .Date | time.Format "2006-01-02" }} — <a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+      <li>
+        <time class="delivery-date" datetime="{{ .Date | time.Format "2006-01-02" }}">{{ .Date | time.Format "2006-01-02" }}</time>
+        <a class="delivery-title" href="{{ .RelPermalink }}">{{ .Title }}</a>
+      </li>
     {{ end }}
   </ul>
   {{ partial "pagination.html" . }}
