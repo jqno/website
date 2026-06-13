@@ -4,7 +4,6 @@ slug: 2016-04-13-appril-festival
 date: 2016-04-13
 talks: ["fp-in-java"]
 conferences: ["Appril Festival"]
-tags: ["java", "fp", "functional-programming", "referential-transparency"]
 links:
   - {label: "Event page", url: "http://appril.nl/"}
   - {label: "Slides", url: "https://jqno.nl/website-files/presentation-fp-in-java.pdf"}

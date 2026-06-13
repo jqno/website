@@ -4,5 +4,4 @@ slug: 2015-11-01-rabobank-internal-meeting
 date: 2015-11-01
 talks: ["fp-in-java"]
 conferences: ["Rabobank internal meeting"]
-tags: ["java", "fp", "functional-programming", "referential-transparency"]
 ---

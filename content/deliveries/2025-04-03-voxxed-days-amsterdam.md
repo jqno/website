@@ -4,7 +4,6 @@ slug: 2025-04-03-voxxed-days-amsterdam
 date: 2025-04-03
 talks: ["fantasticlanguages"]
 conferences: ["Voxxed Days Amsterdam"]
-tags: ["annotationscript", "arabic", "basic", "c#", "elm", "english", "java", "php", "ruby"]
 links:
   - {label: "Event page", url: "https://amsterdam.voxxeddays.com/"}
   - {label: "Slides", url: "https://jqno.nl/talks/slides/fantasticlanguages/2025-04-03-voxxed-days-amsterdam/"}

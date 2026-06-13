@@ -4,7 +4,6 @@ slug: 2018-04-04-ordina-code-comedy
 date: 2018-04-04
 talks: ["dont-hack-the-platform"]
 conferences: ["Ordina Code & Comedy"]
-tags: ["hack", "jvm", "java", "scala", "kotlin", "unicode", "reflection", "objenesis", "bytebuddy", "agents"]
 links:
   - {label: "Event page", url: "https://codeandcomedy.nl/"}
   - {label: "Slides", url: "https://jqno.nl/talks/slides/donthack/2018-04-04-ordina-code-&-comedy/"}
