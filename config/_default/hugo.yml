@@ -1,4 +1,5 @@
 baseURL: /
+canonifyURLs: true
 languageCode: en-uk
 title: tr ouwens
 theme: basic
