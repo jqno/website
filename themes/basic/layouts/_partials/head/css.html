@@ -1,5 +1,5 @@
 {{- /* Publish the font files so the relative url()s in fonts.css resolve.
-Only woff/woff2 are web fonts; the OTF (for images.Text) and the license PDF stay unpublished. */}}
+Only woff/woff2 are web fonts; the license PDF stays unpublished. */}}
 {{- range resources.Match "fonts/**" }}
   {{- if in (slice ".woff" ".woff2") (path.Ext .Name) }}
     {{- $noop := .RelPermalink }}

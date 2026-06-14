@@ -4,6 +4,7 @@ slug: distancing-myself-from-big-tech
 date: 2026-05-19
 tags: ["big-tech", "google", "microsoft"]
 description: In which I replace services I've been using for literal decades
+og_image: walking-away.webp
 aliases:
   - /post/2026/05/19/distancing-myself-from-big-tech/
 ---

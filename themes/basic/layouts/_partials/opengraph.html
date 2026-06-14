@@ -1,11 +1,10 @@
 {{- /*
-OpenGraph meta tags with a generated, title-stamped og:image.
+OpenGraph meta tags with a generated og:image, cropped to 1200x630.
 
 Base image resolution order:
-1. `og_image` front matter → used as-is (cropped only), no text overlay.
-2. The page's own bundle image (posts, talks).
-3. A per-section default from assets/images/og/<section>.jpg.
-4. assets/images/og/default.jpg.
+1. `og_image` front matter (set this to put a bundle image on the card).
+2. A per-section default from assets/images/og/<section>.jpg.
+3. assets/images/og/default.jpg.
 */}}
 
 {{- $sectionMap := dict
@@ -17,17 +16,13 @@ Base image resolution order:
   "conferences" "talks"
 }}
 
+{{- $section := or (index $sectionMap .Section) .Section }}
+
 {{- $base := "" }}
-{{- $stampTitle := true }}
 {{- with .Params.og_image }}
   {{- $base = or ($.Resources.GetMatch .) (resources.Get .) }}
-  {{- $stampTitle = false }}
 {{- end }}
 {{- if not $base }}
-  {{- $base = index (.Resources.ByType "image") 0 }}
-{{- end }}
-{{- if not $base }}
-  {{- $section := or (index $sectionMap .Section) .Section }}
   {{- $base = resources.Get (printf "images/og/%s.jpg" $section) }}
 {{- end }}
 {{- if not $base }}
@@ -35,29 +30,13 @@ Base image resolution order:
 {{- end }}
 
 {{- $title := or .Title site.Title }}
-{{- $img := $base.Fill "1200x630 Center" }}
-{{- $font := resources.Get "fonts/tilburgsans/TilburgsAns-Bold.otf" }}
-{{- if and $stampTitle $font }}
-  {{- $maxWidth := 1080 }}
-  {{- $size := 42 }}
-  {{- range slice 96 80 64 52 42 }}
-    {{- $estimate := mul (mul (strings.RuneCount $title) .) 0.52 }}
-    {{- if and (eq $size 42) (le $estimate $maxWidth) }}
-      {{- $size = . }}
-    {{- end }}
-  {{- end }}
-  {{- $band := resources.Get "images/og/band.png" }}
-  {{- $textOpts := dict
-    "color" "#ffffff"
-    "size" $size
-    "x" 60
-    "y" (sub 540 $size)
-    "font" $font
-  }}
-  {{- $img = $img.Filter (images.Overlay $band 0 440) (images.Text $title $textOpts) }}
-{{- end }}
-{{- $img = $img.Process "webp q75" }}
+{{- $img := ($base.Fill "1200x630 Center").Process "webp q75" }}
+{{- $code := split site.Language.LanguageCode "-" }}
+{{- $siteLocale := printf "%s_%s" (index $code 0) (upper (index $code 1)) }}
+{{- $locale := cond (eq $section "briefenleed") "nl_NL" $siteLocale }}
 
+<meta property="og:site_name" content="{{ site.Title }}">
+<meta property="og:locale" content="{{ $locale }}">
 <meta property="og:title" content="{{ $title }}">
 <meta property="og:type" content="{{ if .IsPage }}article{{ else }}website{{ end }}">
 <meta property="og:url" content="{{ .Permalink }}">
@@ -67,3 +46,4 @@ Base image resolution order:
 <meta property="og:image" content="{{ $img.Permalink }}">
 <meta property="og:image:width" content="{{ $img.Width }}">
 <meta property="og:image:height" content="{{ $img.Height }}">
+<meta property="og:image:alt" content="{{ $title }}">

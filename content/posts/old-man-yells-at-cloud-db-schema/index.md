@@ -4,6 +4,7 @@ slug: old-man-yells-at-cloud-db-schema
 date: 2026-02-17
 tags: ["database"]
 description: In which I explain my personal rules for defining a schema in relational databases
+og_image: old-man-yells-at-cloud.webp
 aliases:
   - /post/2026/02/17/old-man-yells-at-cloud-db-schema/
 ---
