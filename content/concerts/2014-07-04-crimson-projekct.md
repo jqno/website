@@ -6,6 +6,12 @@ artists:
   - "The Crimson ProjeKCt"
   - "Stick Men"
   - "Adrian Belew Power Trio"
+  - "Tony Levin"
+  - "Pat Mastelotto"
+  - "Markus Reuter"
+  - "Adrian Belew"
+  - "Julie Slick"
+  - "Tobias Ralph"
 venues:
   - "Tolhuistuin - Amsterdam"
 ---
@@ -15,7 +21,7 @@ _Markus Reuter_
 
 * Opening
 
-_Markus Reuter, Pat Matelotto, Tobias Ralph_
+_Markus Reuter, Pat Mastelotto, Tobias Ralph_
 
 * B'Boom
 
