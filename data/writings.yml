@@ -11,6 +11,15 @@ sections:
           - label: site
             url: http://jqno.nl/blog
 
+      - name: Sustainability for Java Developers
+        id: foojay-book
+        date: 2024 - present
+        description: Co-author of the Foojay book on sustainability
+        language: 🇬🇧
+        links:
+          - label: site
+            url: https://leanpub.com/sustainabilityforjavadevelopers
+
       - name: Brief en leed
         id: brief-en-leed
         date: 2009 - 2012
