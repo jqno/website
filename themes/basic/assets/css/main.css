@@ -3,6 +3,12 @@
   width: 80%;
 }
 
+.site-title {
+  display: block;
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
 nav, footer {
   background-color: #333;
   color: #fff;
