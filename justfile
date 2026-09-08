@@ -7,7 +7,7 @@ build:
 
 # Serve the site locally
 serve:
-    docker compose run --rm --service-ports hugo hugo server --bind 0.0.0.0
+    docker compose run --rm --service-ports hugo hugo server --renderToMemory --bind 0.0.0.0
 
 # Clean the public directory
 clean:
