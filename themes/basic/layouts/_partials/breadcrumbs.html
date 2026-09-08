@@ -1,0 +1,21 @@
+{{- /*
+Renders a breadcrumb navigation: Home » section(s) » current page.
+
+@context {page} page The current page.
+
+@example: {{ partial "breadcrumbs.html" . }}
+*/}}
+
+{{- with .Ancestors.Reverse }}
+  <nav class="breadcrumbs" aria-label="Breadcrumb">
+    <ol>
+      <li><a class="breadcrumb-home" href="{{ site.Home.RelPermalink }}">Home</a></li>
+      {{- range . }}
+        {{- if not .IsHome }}
+          <li><a class="breadcrumb-section" href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+        {{- end }}
+      {{- end }}
+      <li><span class="breadcrumb-current" aria-current="page">{{ $.Title }}</span></li>
+    </ol>
+  </nav>
+{{- end }}

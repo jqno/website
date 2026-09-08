@@ -1,17 +1,20 @@
 {{ define "main" }}
-  <h1>{{ .Title }}</h1>
-  {{ with .Resources.GetMatch "titleslide.*" }}
-    {{ with .Resize "800x" }}<img src="{{ .RelPermalink }}" alt="{{ $.Title }}" width="{{ .Width }}" height="{{ .Height }}">{{ end }}
-  {{ end }}
-  {{ partial "terms.html" (dict "taxonomy" "tags" "page" .) }}
-  {{ .Content }}
-  <h2>Deliveries</h2>
-  <ul>
-    {{ range .Pages }}
-      <li>
-        <a class="delivery-title" href="{{ .RelPermalink }}">{{ .Title }}</a>
-        <time class="delivery-date" datetime="{{ .Date | time.Format "2006-01-02" }}">{{ .Date | time.Format ":date_long" }}</time>
-      </li>
+  {{ partial "breadcrumbs.html" . }}
+  <article>
+    <h1>{{ .Title }}</h1>
+    {{ with .Resources.GetMatch "titleslide.*" }}
+      {{ with .Resize "800x" }}<img src="{{ .RelPermalink }}" alt="{{ $.Title }}" width="{{ .Width }}" height="{{ .Height }}">{{ end }}
     {{ end }}
-  </ul>
+    {{ partial "terms.html" (dict "taxonomy" "tags" "page" .) }}
+    {{ .Content }}
+    <h2>Deliveries</h2>
+    <ul>
+      {{ range .Pages }}
+        <li>
+          <a class="delivery-title" href="{{ .RelPermalink }}">{{ .Title }}</a>
+          <time class="delivery-date" datetime="{{ .Date | time.Format "2006-01-02" }}">{{ .Date | time.Format ":date_long" }}</time>
+        </li>
+      {{ end }}
+    </ul>
+  </article>
 {{ end }}
