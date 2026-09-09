@@ -7,10 +7,8 @@ For a given taxonomy, renders a list of terms assigned to the page.
 @example: {{ partial "terms.html" (dict "taxonomy" "tags" "page" .) }}
 */}}
 
-{{- $page := .page }}
-{{- $taxonomy := .taxonomy }}
 
-{{- with $page.GetTerms $taxonomy }}
+{{- with .page.GetTerms .taxonomy }}
   {{- $label := (index . 0).Parent.LinkTitle }}
   <div>
     <div>{{ $label }}:</div>

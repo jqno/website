@@ -2,9 +2,5 @@
   {{ partial "breadcrumbs.html" . }}
   <h1>{{ .Title }}</h1>
   {{ .Content }}
-  <ul>
-    {{ range .Pages }}
-      <li><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></li>
-    {{ end }}
-  </ul>
+  {{ partial "entry-list.html" (dict "page" . "entries" .Pages) }}
 {{ end }}

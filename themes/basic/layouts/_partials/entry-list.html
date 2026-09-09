@@ -1,0 +1,31 @@
+{{- /*
+Renders pages as date/title rows, shared by every dated section listing.
+
+Each part renders only when the page has it, so a richer entry (a concert with
+venues, a post with a description) stays richer without a per-section template.
+The human date comes from a `date_format` param, cascaded from the section's
+`_index.md`; it defaults to the site-wide long date.
+
+@context {page} page The listing page; its type tags the <ul> for CSS.
+@context {slice} entries The pages to render.
+
+@example: {{ partial "entry-list.html" (dict "page" . "entries" .Paginator.Pages) }}
+*/}}
+
+<ul class="entry-list {{ .page.Type }}">
+  {{- range .entries }}
+    <li>
+      {{- if not .Date.IsZero }}
+        {{- $format := or .Params.date_format ":date_long" }}
+        <time class="entry-date" datetime="{{ .Date | time.Format "2006-01-02" }}">{{ .Date | time.Format $format }}</time>
+      {{- end }}
+      <a class="entry-title" href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>
+      {{- with .Params.venues }}
+        <span class="entry-venue">{{ delimit . ", " }}</span>
+      {{- end }}
+      {{- with .Description }}
+        <p class="description">{{ . }}</p>
+      {{- end }}
+    </li>
+  {{- end }}
+</ul>

@@ -8,13 +8,6 @@
     {{ partial "terms.html" (dict "taxonomy" "tags" "page" .) }}
     {{ .Content }}
     <h2>Deliveries</h2>
-    <ul>
-      {{ range .Pages }}
-        <li>
-          <a class="delivery-title" href="{{ .RelPermalink }}">{{ .Title }}</a>
-          <time class="delivery-date" datetime="{{ .Date | time.Format "2006-01-02" }}">{{ .Date | time.Format ":date_long" }}</time>
-        </li>
-      {{ end }}
-    </ul>
+    {{ partial "entry-list.html" (dict "page" . "entries" .Pages) }}
   </article>
 {{ end }}

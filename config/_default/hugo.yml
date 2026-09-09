@@ -19,6 +19,12 @@ taxonomies:
   categorie: categorieen
   auteur: auteurs
 
+params:
+  # Order in which a page's taxonomy terms are rendered. A page only ever
+  # belongs to its own section's taxonomies, so one global order keeps each
+  # section's pairing (venue before artist, talk before conference) intact.
+  taxonomy_order: [venues, artists, categorieen, auteurs, talks, conferences, tags]
+
 permalinks:
   page:
     posts: /posts/:slug/

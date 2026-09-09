@@ -2,15 +2,9 @@
   {{ partial "breadcrumbs.html" . }}
   <h1>{{ .Title }}</h1>
   {{ .Content }}
-  <ul>
-    {{ range .Paginator.Pages }}
-      <li>
-        <a class="post-title" href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>
-        {{ with .Description }}
-          <p class="description">{{ . }}</p>
-        {{ end }}
-      </li>
-    {{ end }}
-  </ul>
+  {{ partial "entry-list.html" (dict "page" . "entries" .Paginator.Pages) }}
   {{ partial "pagination.html" . }}
+  {{ with .Params.author_bio }}
+    {{ partial "author.html" (dict "bio" . "extraLinks" $.Params.author_links) }}
+  {{ end }}
 {{ end }}

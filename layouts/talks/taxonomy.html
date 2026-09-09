@@ -9,7 +9,7 @@
           {{ with .Resources.GetMatch "titleslide.*" }}
             {{ with .Resize "300x" }}<img src="{{ .RelPermalink }}" alt="" width="{{ .Width }}" height="{{ .Height }}">{{ end }}
           {{ end }}
-          <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+          <a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>
         </li>
       {{ end }}
     {{ end }}
@@ -17,7 +17,7 @@
   <h2>One-off talks</h2>
   <ul>
     {{ range .Pages }}
-      {{ if not .Content }}<li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>{{ end }}
+      {{ if not .Content }}<li><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></li>{{ end }}
     {{ end }}
   </ul>
   <p>

@@ -1,17 +1,32 @@
 {{ define "main" }}
   {{ partial "breadcrumbs.html" . }}
   <article>
-    <h1>{{ .Title }}</h1>
+    <header>
+      <h1>{{ .Title }}</h1>
+      {{ with .Description }}
+        <p class="description">{{ . }}</p>
+      {{ end }}
+      {{ if not .Date.IsZero }}
+        {{ $format := or .Params.date_format ":date_long" }}
+        <time datetime="{{ .Date | time.Format "2006-01-02" }}">{{ .Date | time.Format $format }}</time>
+      {{ end }}
+      {{ range site.Params.taxonomy_order }}
+        {{ partial "terms.html" (dict "taxonomy" . "page" $) }}
+      {{ end }}
+    </header>
 
-    {{ with .Description }}
-      <p class="description">{{ . }}</p>
+    {{ with .Params.recording }}
+      <p><strong>Recording:</strong> <a href="{{ .url }}">{{ .title }}</a></p>
     {{ end }}
 
-    {{ $dateMachine := .Date | time.Format "2006-01-02T15:04:05-07:00" }}
-    {{ $dateHuman := .Date | time.Format ":date_long" }}
-    <time datetime="{{ $dateMachine }}">{{ $dateHuman }}</time>
+    {{ with .Params.links }}
+      <ul>
+        {{ range . }}<li><a href="{{ .url }}">{{ .label }}</a></li>{{ end }}
+      </ul>
+    {{ end }}
 
     {{ .Content }}
-    {{ partial "terms.html" (dict "taxonomy" "tags" "page" .) }}
+
+    {{ partial "comments.html" . }}
   </article>
 {{ end }}

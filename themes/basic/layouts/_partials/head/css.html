@@ -2,7 +2,7 @@
 Only woff/woff2 are web fonts; the license PDF stays unpublished. */}}
 {{- range resources.Match "fonts/**" }}
   {{- if in (slice ".woff" ".woff2") (path.Ext .Name) }}
-    {{- $noop := .RelPermalink }}
+    {{- .Publish }}
   {{- end }}
 {{- end }}
 {{- $fonts := resources.Get "css/fonts.css" }}

@@ -14,15 +14,13 @@ Width constants below are placeholders until real CSS exists — retune then.
 {{- $mobileWidth := 400 }}
 {{- $breakpoint := 600 }}
 
-{{- $img := .image }}
-{{- $alt := .alt }}
-{{- $mobile := or .mobileImage $img }}
+{{- $mobile := or .mobileImage .image }}
 
-{{- $dw := math.Min $img.Width $desktopWidth }}
+{{- $dw := math.Min .image.Width $desktopWidth }}
 {{- $mw := math.Min $mobile.Width $mobileWidth }}
-{{- $desktopVariant := $img.Process (printf "resize %.0fx webp" $dw) }}
+{{- $desktopVariant := .image.Process (printf "resize %.0fx webp" $dw) }}
 {{- $mobileVariant := $mobile.Process (printf "resize %.0fx webp" $mw) }}
 <picture>
   <source media="(max-width: {{ $breakpoint }}px)" srcset="{{ $mobileVariant.RelPermalink }}">
-  <img src="{{ $desktopVariant.RelPermalink }}" alt="{{ $alt }}" width="{{ $desktopVariant.Width }}" height="{{ $desktopVariant.Height }}">
+  <img src="{{ $desktopVariant.RelPermalink }}" alt="{{ .alt }}" width="{{ $desktopVariant.Width }}" height="{{ $desktopVariant.Height }}">
 </picture>
