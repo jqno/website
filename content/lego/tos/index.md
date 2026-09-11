@@ -1,6 +1,7 @@
 ---
 slug: tos
 title: "Star Trek: The Original Series cast Lego MOC"
+date: 2023-09-20
 tags: [lego, star-trek]
 ---
 

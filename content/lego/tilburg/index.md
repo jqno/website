@@ -1,6 +1,7 @@
 ---
 slug: tilburg
 title: "Tilburg Skyline"
+date: 2024-10-11
 tags: [lego, tilburg]
 ---
 

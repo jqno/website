@@ -1,6 +1,7 @@
 ---
 slug: voyager
 title: "Star Trek: Voyager cast Lego MOC"
+date: 2023-09-24
 tags: [lego, star-trek]
 ---
 

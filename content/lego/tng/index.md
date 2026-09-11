@@ -1,6 +1,7 @@
 ---
 slug: tng
 title: "Star Trek: The Next Generation cast Lego MOC"
+date: 2023-09-21
 tags: [lego, star-trek]
 ---
 

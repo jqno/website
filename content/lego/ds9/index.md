@@ -1,6 +1,7 @@
 ---
 slug: ds9
 title: "Star Trek: Deep Space Nine cast Lego MOC"
+date: 2023-09-23
 tags: [lego, star-trek]
 ---
 
