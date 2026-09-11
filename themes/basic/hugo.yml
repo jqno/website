@@ -2,5 +2,5 @@ params:
   social:
     bluesky: https://bsky.app/profile/jqno.nl
     mastodon: https://mastodon.online/@jqno
-    github: jqno
-    stackoverflow: 127863
+    github: https://github.com/jqno
+    linkedin: https://www.linkedin.com/in/janouwens/

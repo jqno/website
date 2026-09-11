@@ -4,7 +4,4 @@
   {{ .Content }}
   {{ partial "entry-list.html" (dict "page" . "entries" .Paginator.Pages) }}
   {{ partial "pagination.html" . }}
-  {{ with .Params.author_bio }}
-    {{ partial "author.html" (dict "bio" . "extraLinks" $.Params.author_links) }}
-  {{ end }}
 {{ end }}

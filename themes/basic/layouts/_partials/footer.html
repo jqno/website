@@ -1,2 +1,8 @@
+<ul class="social">
+  {{- with site.Params.social.mastodon }}<li><a href="{{ . }}" rel="me">Mastodon</a></li>{{- end }}
+  {{- with site.Params.social.bluesky }}<li><a href="{{ . }}" rel="me">Bluesky</a></li>{{- end }}
+  {{- with site.Params.social.github }}<li><a href="{{ . }}">GitHub</a></li>{{- end }}
+  {{- with site.Params.social.linkedin }}<li><a href="{{ . }}" rel="me">LinkedIn</a></li>{{- end }}
+</ul>
 {{ partial "search.html" . }}
 <p>Copyright {{ now.Year }}. All rights reserved.</p>
